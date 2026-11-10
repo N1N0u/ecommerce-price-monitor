@@ -1,0 +1,11 @@
+playwright
+beautifulsoup4
+requests
+pandas
+sqlalchemy
+python-dotenv
+streamlit
+plotly
+apscheduler
+openpyxl
+pytest
