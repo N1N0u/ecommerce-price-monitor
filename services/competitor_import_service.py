@@ -8,10 +8,9 @@ class CompetitorImportService:
     def __init__(self, db):
         self.db = db
 
+
+
     def normalize_url(self, url):
-        """
-        Validate and normalize a competitor website URL.
-        """
 
         url = url.strip()
 
@@ -32,11 +31,23 @@ class CompetitorImportService:
         if parsed.username or parsed.password:
             raise ValueError("URLs containing credentials are not allowed")
 
-        # Keep the website's hostname and port.
-        # Remove paths, query strings and fragments.
+        hostname = parsed.hostname.lower()
+
+        if hostname.startswith("www."):
+            hostname = hostname[4:]
+
+        # Preserve a non-default port.
+        port = parsed.port
+
+        if port and not (
+            (parsed.scheme == "https" and port == 443)
+            or (parsed.scheme == "http" and port == 80)
+        ):
+            hostname = f"{hostname}:{port}"
+
         normalized_url = urlunsplit((
             parsed.scheme.lower(),
-            parsed.netloc.lower(),
+            hostname,
             "",
             "",
             ""
