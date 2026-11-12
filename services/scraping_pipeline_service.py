@@ -107,14 +107,16 @@ class ScrapingPipelineService:
         results = {
             "scraped": 0,
             "processed": 0,
+            "failed": 0,
             "alerts": 0,
-            "products": []
+            "products": [],
+            "errors": []
         }
 
         try:
 
-            # 1. Download and extract products
-            scraped_products = self.scraper.scrape_page(
+            # 1. Scrape all pages
+            scraped_products = self.scraper.scrape_all_pages(
                 page_url
             )
 
@@ -123,37 +125,67 @@ class ScrapingPipelineService:
             # 2. Find or create competitor
             competitor = self.get_or_create_competitor()
 
-            # 3. Process every scraped product
+            self.db.commit()
+
+            # 3. Process products individually
             for scraped_product in scraped_products:
 
-                listing = self.get_or_create_listing(
-                    competitor,
-                    scraped_product
-                )
+                try:
 
-                # 4. Record the price and detect changes
-                observation = self.price_monitor.record_observation(
-                    listing_id=listing.id,
-                    price=scraped_product["price"],
-                    currency=scraped_product["currency"],
-                    availability=scraped_product["availability"]
-                )
+                    listing = self.get_or_create_listing(
+                        competitor,
+                        scraped_product
+                    )
 
-                results["processed"] += 1
-                results["alerts"] += len(observation["alerts"])
+                    observation = self.price_monitor.record_observation(
+                        listing_id=listing.id,
+                        price=scraped_product["price"],
+                        currency=scraped_product["currency"],
+                        availability=scraped_product["availability"]
+                    )
 
-                results["products"].append({
-                    "name": scraped_product["name"],
-                    "price": scraped_product["price"],
-                    "alerts": [
-                        alert.alert_type
-                        for alert in observation["alerts"]
-                    ]
-                })
+                    results["processed"] += 1
+
+                    results["alerts"] += len(
+                        observation["alerts"]
+                    )
+
+                    results["products"].append({
+                        "name": scraped_product["name"],
+                        "price": scraped_product["price"],
+                        "alerts": [
+                            alert.alert_type
+                            for alert in observation["alerts"]
+                        ]
+                    })
+
+                except Exception as error:
+
+                    self.db.rollback()
+
+                    results["failed"] += 1
+
+                    error_message = {
+                        "product": scraped_product.get(
+                            "name",
+                            "Unknown product"
+                        ),
+                        "error": str(error)
+                    }
+
+                    results["errors"].append(error_message)
+
+                    logger.exception(
+                        "Failed to process product: %s",
+                        error_message["product"]
+                    )
+
+                    continue
 
             logger.info(
-                "Pipeline completed: %s products processed, %s alerts generated",
+                "Pipeline finished: %s processed, %s failed, %s alerts",
                 results["processed"],
+                results["failed"],
                 results["alerts"]
             )
 

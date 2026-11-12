@@ -24,12 +24,11 @@ def main():
         print("\n========== PIPELINE RESULTS ==========")
 
         print("Products scraped:", results["scraped"])
-
         print("Products processed:", results["processed"])
-
+        print("Products failed:", results["failed"])
         print("Alerts generated:", results["alerts"])
 
-        print("\nFirst five processed products:")
+        print("\nFIRST FIVE PROCESSED PRODUCTS")
 
         for product in results["products"][:5]:
 
@@ -39,7 +38,18 @@ def main():
             print("Price:", product["price"])
             print("Alerts:", product["alerts"])
 
-        print("\nPipeline completed successfully!")
+        if results["errors"]:
+
+            print("\nFAILED PRODUCTS")
+
+            for error in results["errors"]:
+
+                print("-" * 40)
+
+                print("Product:", error["product"])
+                print("Error:", error["error"])
+
+        print("\nPipeline completed!")
 
     except Exception as error:
 

@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 class BooksToScrape:
 
     BASE_URL = "https://books.toscrape.com/"
-
     def __init__(self):
 
         self.session = requests.Session()
@@ -109,3 +108,94 @@ class BooksToScrape:
         )
 
         return products
+
+    def scrape_all_pages(self, start_url, max_pages=100):
+
+        """
+        Scrape multiple product listing pages safely.
+        """
+
+        all_products = []
+
+        current_url = start_url
+
+        page_number = 1
+
+        visited_urls = set()
+
+        while current_url and page_number <= max_pages:
+
+            # Prevent infinite pagination loops
+            if current_url in visited_urls:
+
+                logger.warning(
+                    "Duplicate page URL detected: %s",
+                    current_url
+                )
+
+                break
+
+            visited_urls.add(current_url)
+
+            logger.info(
+                "Scraping page %s: %s",
+                page_number,
+                current_url
+            )
+
+            try:
+
+                html = self.fetch_page(current_url)
+
+                products = self.parse_products(html)
+
+                all_products.extend(products)
+
+                logger.info(
+                    "Page %s: found %s products",
+                    page_number,
+                    len(products)
+                )
+
+                soup = BeautifulSoup(
+                    html,
+                    "html.parser"
+                )
+
+                next_button = soup.select_one("li.next a")
+
+                if next_button:
+
+                    current_url = urljoin(
+                        current_url,
+                        next_button["href"]
+                    )
+
+                    page_number += 1
+
+                else:
+
+                    current_url = None
+
+            except Exception:
+
+                logger.exception(
+                    "Failed to scrape page %s",
+                    page_number
+                )
+
+                raise
+
+        if current_url and page_number > max_pages:
+
+            logger.warning(
+                "Maximum page limit reached: %s",
+                max_pages
+            )
+
+        logger.info(
+            "Scraping completed. Total products: %s",
+            len(all_products)
+        )
+
+        return all_products
