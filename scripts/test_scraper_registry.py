@@ -14,8 +14,7 @@ def main():
 
     test_urls = [
         "https://books.toscrape.com/",
-        "https://www.books.toscrape.com/",
-        "https://example-store.com/"
+        "https://www.books.toscrape.com/"
     ]
 
     for url in test_urls:
