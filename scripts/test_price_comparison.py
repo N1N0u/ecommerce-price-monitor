@@ -17,7 +17,7 @@ def main():
     db = SessionLocal()
 
     test_id = uuid.uuid4().hex[:8]
-
+    
     try:
 
         # Create test product
