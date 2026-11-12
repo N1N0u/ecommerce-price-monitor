@@ -4,12 +4,12 @@ import requests
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-
+from scrapers.base_scraper import BaseScraper
 
 logger = logging.getLogger(__name__)
 
 
-class BooksToScrape:
+class BooksToScrape(BaseScraper):
 
     BASE_URL = "https://books.toscrape.com/"
     def __init__(self):
