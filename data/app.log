@@ -3,3 +3,115 @@
 2026-11-10 18:23:35,801 - __main__ - INFO - Environment: development
 2026-11-10 18:23:35,801 - __main__ - INFO - Application initialized successfully
 2026-11-10 18:23:35,801 - __main__ - INFO - ==================================================
+2026-11-12 09:23:13,344 - scheduler.scraping_scheduler - INFO - Starting scheduler. Interval: 6 hours
+2026-11-12 09:23:13,344 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-11-12 09:23:13,344 - apscheduler.scheduler - INFO - Added job "Competitor Price Monitoring" to job store "default"
+2026-11-12 09:23:13,345 - apscheduler.scheduler - INFO - Scheduler started
+2026-11-12 09:23:13,345 - apscheduler.executors.default - INFO - Running job "Competitor Price Monitoring (trigger: interval[6:00:00], next run at: 2026-11-12 09:23:13 CET)" (scheduled at 2026-11-12 09:23:13.344357+01:00)
+2026-11-12 09:23:13,345 - scheduler.scraping_scheduler - INFO - Starting scheduled scraping job
+2026-11-12 09:23:13,345 - scrapers.books_to_scrape - INFO - Scraping page 1: https://books.toscrape.com/catalogue/page-1.html
+2026-11-12 09:23:14,443 - scrapers.books_to_scrape - INFO - Page 1: found 20 products
+2026-11-12 09:23:14,452 - scrapers.books_to_scrape - INFO - Scraping page 2: https://books.toscrape.com/catalogue/page-2.html
+2026-11-12 09:23:15,031 - scrapers.books_to_scrape - INFO - Page 2: found 20 products
+2026-11-12 09:23:15,040 - scrapers.books_to_scrape - INFO - Scraping page 3: https://books.toscrape.com/catalogue/page-3.html
+2026-11-12 09:23:15,443 - scrapers.books_to_scrape - INFO - Page 3: found 20 products
+2026-11-12 09:23:15,452 - scrapers.books_to_scrape - INFO - Scraping page 4: https://books.toscrape.com/catalogue/page-4.html
+2026-11-12 09:23:15,901 - scrapers.books_to_scrape - INFO - Page 4: found 20 products
+2026-11-12 09:23:15,910 - scrapers.books_to_scrape - INFO - Scraping page 5: https://books.toscrape.com/catalogue/page-5.html
+2026-11-12 09:23:16,370 - scrapers.books_to_scrape - INFO - Page 5: found 20 products
+2026-11-12 09:23:16,379 - scrapers.books_to_scrape - INFO - Scraping page 6: https://books.toscrape.com/catalogue/page-6.html
+2026-11-12 09:23:16,796 - scrapers.books_to_scrape - INFO - Page 6: found 20 products
+2026-11-12 09:23:16,804 - scrapers.books_to_scrape - INFO - Scraping page 7: https://books.toscrape.com/catalogue/page-7.html
+2026-11-12 09:23:17,118 - scrapers.books_to_scrape - INFO - Page 7: found 20 products
+2026-11-12 09:23:17,127 - scrapers.books_to_scrape - INFO - Scraping page 8: https://books.toscrape.com/catalogue/page-8.html
+2026-11-12 09:23:17,378 - scrapers.books_to_scrape - INFO - Page 8: found 20 products
+2026-11-12 09:23:17,387 - scrapers.books_to_scrape - INFO - Scraping page 9: https://books.toscrape.com/catalogue/page-9.html
+2026-11-12 09:23:17,776 - scrapers.books_to_scrape - INFO - Page 9: found 20 products
+2026-11-12 09:23:17,786 - scrapers.books_to_scrape - INFO - Scraping page 10: https://books.toscrape.com/catalogue/page-10.html
+2026-11-12 09:23:18,064 - scrapers.books_to_scrape - INFO - Page 10: found 20 products
+2026-11-12 09:23:18,073 - scrapers.books_to_scrape - INFO - Scraping page 11: https://books.toscrape.com/catalogue/page-11.html
+2026-11-12 09:23:18,372 - scrapers.books_to_scrape - INFO - Page 11: found 20 products
+2026-11-12 09:23:18,380 - scrapers.books_to_scrape - INFO - Scraping page 12: https://books.toscrape.com/catalogue/page-12.html
+2026-11-12 09:23:18,623 - scrapers.books_to_scrape - INFO - Page 12: found 20 products
+2026-11-12 09:23:18,632 - scrapers.books_to_scrape - INFO - Scraping page 13: https://books.toscrape.com/catalogue/page-13.html
+2026-11-12 09:23:18,921 - scrapers.books_to_scrape - INFO - Page 13: found 20 products
+2026-11-12 09:23:18,929 - scrapers.books_to_scrape - INFO - Scraping page 14: https://books.toscrape.com/catalogue/page-14.html
+2026-11-12 09:23:19,203 - scrapers.books_to_scrape - INFO - Page 14: found 20 products
+2026-11-12 09:23:19,211 - scrapers.books_to_scrape - INFO - Scraping page 15: https://books.toscrape.com/catalogue/page-15.html
+2026-11-12 09:23:19,478 - scrapers.books_to_scrape - INFO - Page 15: found 20 products
+2026-11-12 09:23:19,486 - scrapers.books_to_scrape - INFO - Scraping page 16: https://books.toscrape.com/catalogue/page-16.html
+2026-11-12 09:23:19,754 - scrapers.books_to_scrape - INFO - Page 16: found 20 products
+2026-11-12 09:23:19,764 - scrapers.books_to_scrape - INFO - Scraping page 17: https://books.toscrape.com/catalogue/page-17.html
+2026-11-12 09:23:20,047 - scrapers.books_to_scrape - INFO - Page 17: found 20 products
+2026-11-12 09:23:20,056 - scrapers.books_to_scrape - INFO - Scraping page 18: https://books.toscrape.com/catalogue/page-18.html
+2026-11-12 09:23:20,342 - scrapers.books_to_scrape - INFO - Page 18: found 20 products
+2026-11-12 09:23:20,350 - scrapers.books_to_scrape - INFO - Scraping page 19: https://books.toscrape.com/catalogue/page-19.html
+2026-11-12 09:23:20,649 - scrapers.books_to_scrape - INFO - Page 19: found 20 products
+2026-11-12 09:23:20,657 - scrapers.books_to_scrape - INFO - Scraping page 20: https://books.toscrape.com/catalogue/page-20.html
+2026-11-12 09:23:20,917 - scrapers.books_to_scrape - INFO - Page 20: found 20 products
+2026-11-12 09:23:20,925 - scrapers.books_to_scrape - INFO - Scraping page 21: https://books.toscrape.com/catalogue/page-21.html
+2026-11-12 09:23:21,179 - scrapers.books_to_scrape - INFO - Page 21: found 20 products
+2026-11-12 09:23:21,187 - scrapers.books_to_scrape - INFO - Scraping page 22: https://books.toscrape.com/catalogue/page-22.html
+2026-11-12 09:23:21,463 - scrapers.books_to_scrape - INFO - Page 22: found 20 products
+2026-11-12 09:23:21,471 - scrapers.books_to_scrape - INFO - Scraping page 23: https://books.toscrape.com/catalogue/page-23.html
+2026-11-12 09:23:21,770 - scrapers.books_to_scrape - INFO - Page 23: found 20 products
+2026-11-12 09:23:21,779 - scrapers.books_to_scrape - INFO - Scraping page 24: https://books.toscrape.com/catalogue/page-24.html
+2026-11-12 09:23:22,016 - scrapers.books_to_scrape - INFO - Page 24: found 20 products
+2026-11-12 09:23:22,025 - scrapers.books_to_scrape - INFO - Scraping page 25: https://books.toscrape.com/catalogue/page-25.html
+2026-11-12 09:23:22,294 - scrapers.books_to_scrape - INFO - Page 25: found 20 products
+2026-11-12 09:23:22,302 - scrapers.books_to_scrape - INFO - Scraping page 26: https://books.toscrape.com/catalogue/page-26.html
+2026-11-12 09:23:22,602 - scrapers.books_to_scrape - INFO - Page 26: found 20 products
+2026-11-12 09:23:22,610 - scrapers.books_to_scrape - INFO - Scraping page 27: https://books.toscrape.com/catalogue/page-27.html
+2026-11-12 09:23:22,901 - scrapers.books_to_scrape - INFO - Page 27: found 20 products
+2026-11-12 09:23:22,909 - scrapers.books_to_scrape - INFO - Scraping page 28: https://books.toscrape.com/catalogue/page-28.html
+2026-11-12 09:23:23,191 - scrapers.books_to_scrape - INFO - Page 28: found 20 products
+2026-11-12 09:23:23,199 - scrapers.books_to_scrape - INFO - Scraping page 29: https://books.toscrape.com/catalogue/page-29.html
+2026-11-12 09:23:23,481 - scrapers.books_to_scrape - INFO - Page 29: found 20 products
+2026-11-12 09:23:23,490 - scrapers.books_to_scrape - INFO - Scraping page 30: https://books.toscrape.com/catalogue/page-30.html
+2026-11-12 09:23:23,732 - scrapers.books_to_scrape - INFO - Page 30: found 20 products
+2026-11-12 09:23:23,741 - scrapers.books_to_scrape - INFO - Scraping page 31: https://books.toscrape.com/catalogue/page-31.html
+2026-11-12 09:23:23,981 - scrapers.books_to_scrape - INFO - Page 31: found 20 products
+2026-11-12 09:23:23,990 - scrapers.books_to_scrape - INFO - Scraping page 32: https://books.toscrape.com/catalogue/page-32.html
+2026-11-12 09:23:24,235 - scrapers.books_to_scrape - INFO - Page 32: found 20 products
+2026-11-12 09:23:24,248 - scrapers.books_to_scrape - INFO - Scraping page 33: https://books.toscrape.com/catalogue/page-33.html
+2026-11-12 09:23:24,525 - scrapers.books_to_scrape - INFO - Page 33: found 20 products
+2026-11-12 09:23:24,533 - scrapers.books_to_scrape - INFO - Scraping page 34: https://books.toscrape.com/catalogue/page-34.html
+2026-11-12 09:23:24,767 - scrapers.books_to_scrape - INFO - Page 34: found 20 products
+2026-11-12 09:23:24,775 - scrapers.books_to_scrape - INFO - Scraping page 35: https://books.toscrape.com/catalogue/page-35.html
+2026-11-12 09:23:25,016 - scrapers.books_to_scrape - INFO - Page 35: found 20 products
+2026-11-12 09:23:25,024 - scrapers.books_to_scrape - INFO - Scraping page 36: https://books.toscrape.com/catalogue/page-36.html
+2026-11-12 09:23:25,264 - scrapers.books_to_scrape - INFO - Page 36: found 20 products
+2026-11-12 09:23:25,273 - scrapers.books_to_scrape - INFO - Scraping page 37: https://books.toscrape.com/catalogue/page-37.html
+2026-11-12 09:23:25,550 - scrapers.books_to_scrape - INFO - Page 37: found 20 products
+2026-11-12 09:23:25,559 - scrapers.books_to_scrape - INFO - Scraping page 38: https://books.toscrape.com/catalogue/page-38.html
+2026-11-12 09:23:25,826 - scrapers.books_to_scrape - INFO - Page 38: found 20 products
+2026-11-12 09:23:25,837 - scrapers.books_to_scrape - INFO - Scraping page 39: https://books.toscrape.com/catalogue/page-39.html
+2026-11-12 09:23:26,079 - scrapers.books_to_scrape - INFO - Page 39: found 20 products
+2026-11-12 09:23:26,088 - scrapers.books_to_scrape - INFO - Scraping page 40: https://books.toscrape.com/catalogue/page-40.html
+2026-11-12 09:23:26,326 - scrapers.books_to_scrape - INFO - Page 40: found 20 products
+2026-11-12 09:23:26,334 - scrapers.books_to_scrape - INFO - Scraping page 41: https://books.toscrape.com/catalogue/page-41.html
+2026-11-12 09:23:26,574 - scrapers.books_to_scrape - INFO - Page 41: found 20 products
+2026-11-12 09:23:26,582 - scrapers.books_to_scrape - INFO - Scraping page 42: https://books.toscrape.com/catalogue/page-42.html
+2026-11-12 09:23:26,887 - scrapers.books_to_scrape - INFO - Page 42: found 20 products
+2026-11-12 09:23:26,896 - scrapers.books_to_scrape - INFO - Scraping page 43: https://books.toscrape.com/catalogue/page-43.html
+2026-11-12 09:23:27,139 - scrapers.books_to_scrape - INFO - Page 43: found 20 products
+2026-11-12 09:23:27,147 - scrapers.books_to_scrape - INFO - Scraping page 44: https://books.toscrape.com/catalogue/page-44.html
+2026-11-12 09:23:28,000 - scrapers.books_to_scrape - INFO - Page 44: found 20 products
+2026-11-12 09:23:28,008 - scrapers.books_to_scrape - INFO - Scraping page 45: https://books.toscrape.com/catalogue/page-45.html
+2026-11-12 09:23:28,518 - scrapers.books_to_scrape - INFO - Page 45: found 20 products
+2026-11-12 09:23:28,526 - scrapers.books_to_scrape - INFO - Scraping page 46: https://books.toscrape.com/catalogue/page-46.html
+2026-11-12 09:23:28,943 - scrapers.books_to_scrape - INFO - Page 46: found 20 products
+2026-11-12 09:23:28,951 - scrapers.books_to_scrape - INFO - Scraping page 47: https://books.toscrape.com/catalogue/page-47.html
+2026-11-12 09:23:29,440 - scrapers.books_to_scrape - INFO - Page 47: found 20 products
+2026-11-12 09:23:29,449 - scrapers.books_to_scrape - INFO - Scraping page 48: https://books.toscrape.com/catalogue/page-48.html
+2026-11-12 09:23:30,156 - scrapers.books_to_scrape - INFO - Page 48: found 20 products
+2026-11-12 09:23:30,164 - scrapers.books_to_scrape - INFO - Scraping page 49: https://books.toscrape.com/catalogue/page-49.html
+2026-11-12 09:23:30,669 - scrapers.books_to_scrape - INFO - Page 49: found 20 products
+2026-11-12 09:23:30,677 - scrapers.books_to_scrape - INFO - Scraping page 50: https://books.toscrape.com/catalogue/page-50.html
+2026-11-12 09:23:31,181 - scrapers.books_to_scrape - INFO - Page 50: found 20 products
+2026-11-12 09:23:31,196 - scrapers.books_to_scrape - INFO - Scraping completed. Total products: 1000
+2026-11-12 09:23:33,252 - services.scraping_pipeline_service - INFO - Pipeline finished: 1000 processed, 0 failed, 0 alerts
+2026-11-12 09:23:33,252 - scheduler.scraping_scheduler - INFO - Scheduled scraping completed: 1000 scraped, 1000 processed, 0 failed, 0 alerts
+2026-11-12 09:23:33,253 - apscheduler.executors.default - INFO - Job "Competitor Price Monitoring (trigger: interval[6:00:00], next run at: 2026-11-12 15:23:13 CET)" executed successfully
+2026-11-12 09:24:46,700 - scheduler.scraping_scheduler - INFO - Stopping scheduler
+2026-11-12 09:24:46,701 - apscheduler.scheduler - INFO - Scheduler has been shut down
