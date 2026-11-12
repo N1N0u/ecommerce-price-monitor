@@ -98,16 +98,33 @@ class ConfigurableScraper(BaseScraper):
 
         for container in containers:
 
-            name = self.extract_text(
-                container,
+            # Extract product name
+            name_element = container.select_one(
                 self.config["name_selector"]
             )
 
+            name = ""
+
+            if name_element:
+
+                name_attribute = self.config.get("name_attribute")
+
+                if name_attribute:
+                    name = name_element.get(
+                        name_attribute, ""
+                    ).strip()
+                else:
+                    name = name_element.get_text(
+                        " ", strip=True
+                    )
+
+            # Extract price
             price_text = self.extract_text(
                 container,
                 self.config["price_selector"]
             )
 
+            # Extract availability
             availability = self.extract_text(
                 container,
                 self.config.get("availability_selector")
@@ -115,6 +132,7 @@ class ConfigurableScraper(BaseScraper):
 
             price = self.extract_price(price_text)
 
+            # Extract product URL
             product_link = container.select_one(
                 self.config["product_url_selector"]
             )
@@ -138,6 +156,7 @@ class ConfigurableScraper(BaseScraper):
             })
 
         return products
+
 
     # -----------------------------------------
     # FIND NEXT PAGE

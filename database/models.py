@@ -94,6 +94,12 @@ class Competitor(Base):
         cascade="all, delete-orphan"
     )
 
+    scraper_config: Mapped["ScraperConfig | None"] = relationship(
+        back_populates="competitor",
+        cascade="all, delete-orphan",
+        uselist=False
+    )
+
 
 # ==========================================
 # PRODUCT LISTINGS
@@ -262,4 +268,93 @@ class Alert(Base):
 
     listing: Mapped["ProductListing"] = relationship(
         back_populates="alerts"
+    )
+# ==========================================
+# SCRAPER CONFIGURATIONS
+# ==========================================
+
+class ScraperConfig(Base):
+
+    __tablename__ = "scraper_configs"
+
+    id: Mapped[int] = mapped_column(
+        Integer,
+        primary_key=True
+    )
+
+    competitor_id: Mapped[int] = mapped_column(
+        ForeignKey("competitors.id"),
+        unique=True,
+        nullable=False
+    )
+
+    # Product extraction selectors
+
+    product_container: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False
+    )
+
+    name_selector: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False
+    )
+
+    name_attribute: Mapped[str | None] = mapped_column(
+        String(50),
+        nullable=True
+    )
+
+    price_selector: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False
+    )
+
+    availability_selector: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True
+    )
+
+    product_url_selector: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False
+    )
+
+    next_page_selector: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True
+    )
+
+    # Scraping settings
+
+    currency: Mapped[str] = mapped_column(
+        String(10),
+        nullable=False
+    )
+
+    timeout: Mapped[int] = mapped_column(
+        Integer,
+        default=30,
+        nullable=False
+    )
+
+    enabled: Mapped[bool] = mapped_column(
+        Boolean,
+        default=True,
+        nullable=False
+    )
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=utc_now
+    )
+
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=utc_now,
+        onupdate=utc_now
+    )
+
+    competitor: Mapped["Competitor"] = relationship(
+        back_populates="scraper_config"
     )

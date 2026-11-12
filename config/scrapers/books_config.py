@@ -3,6 +3,8 @@ BOOKS_CONFIG = {
 
     "name_selector": "h3 a",
 
+    "name_attribute": "title",
+
     "price_selector": ".price_color",
 
     "availability_selector": ".availability",
