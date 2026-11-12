@@ -15,7 +15,8 @@ from dashboard.pages import (
     competitors,
     price_history,
     alerts,
-    exports
+    exports,
+    import_competitors
 )
 
 
@@ -39,7 +40,8 @@ page = st.sidebar.radio(
         "Competitors",
         "Price History",
         "Alerts",
-        "Exports"
+        "Exports",
+        "Import Competitors"
     ]
 )
 
@@ -57,3 +59,6 @@ elif page == "Alerts":
 
 elif page == "Exports":
     exports.show()
+    
+elif page == "Import Competitors":
+    import_competitors.show()
